@@ -1,0 +1,7 @@
+1110        HudsonPainting          1750.25
+1111        SUEZElectric            1170.34
+1112        SamsPlumbing            1200.00
+1113        JPRepairs               1343.12
+1114        McKadeRoofing           1665.85
+1115        SeasideHVAC             1095.99
+1116        Mark&CoDevelopers       2550.88

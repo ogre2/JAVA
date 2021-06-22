@@ -1,0 +1,28 @@
+P       1110       7859       Payment       1000.00           
+P       1110       5838       Payment       750.25
+O       1110       5119       Paint         5       75.00
+O       1110       9635       Primer        5       65.00
+O       1111       3129       Cable         8       130.00
+P       1111       7751       Payment       600.00
+P       1111       2910       Payment       500.00
+O       1111       5238       Ladder        3       119.00
+O       1112       7823       Wrench        5       49.97
+P       1112       3898       Payment       1200.00
+O       1112       4492       Gloves        4       4.95
+O       1112       4599       Clamp         2       36.97
+P       1113       1633       Payment       1200.00
+O       1113       3188       Screwdriver   2       17.90
+O       1113       2985       Screws        4       25.68     
+O       1113       9436       Pliers        2       12.97       
+O       1114       6721       Ladder        3       125.00
+P       1114       3524       Payment       375.00
+P       1114       7512       Payment       500.85
+P       1114       8759       Payment       1100.00
+O       1115       7057       Fuses         20      4.50
+P       1115       9089       Payment       500.95
+P       1115       6120       Payment       500
+O       1115       4985       Washers       50      3.98  
+O       1116       2407       Clamps        4       52.47     
+O       1116       7668       ConcreteMix   25      12.97     
+O       1116       7664       Drywall       20      11.53     
+P       1116       9443       Payment       2000.00  

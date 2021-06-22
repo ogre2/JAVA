@@ -1,0 +1,84 @@
+if (!(transaction.getCustomerID() == customer.getCustomerID()))
+{
+    throw new UnknownCustomerException(transaction.getTransactionNum());
+}
+else
+{
+    customer.addTransaction(transaction);
+}
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.IOException;
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class Main
+{
+
+    public static void main(String[] args) throws Exception
+    {
+        ArrayList<Customer> customers = new ArrayList<>();
+
+        File customersFile = new File("customers.txt");
+        Scanner cScanner = new Scanner(customersFile);
+
+        FileWriter fw = new FileWriter("output.txt");
+        PrintWriter pw = new PrintWriter(fw);
+        
+        while (cScanner.hasNext())
+        {
+            Customer customer;
+            try
+            {
+                int customerID = cScanner.nextInt();
+                String customerName = cScanner.next();
+                double customerBalance = cScanner.nextDouble();
+
+                customer = new Customer(customerID, customerName, customerBalance);
+
+                customers.add(customer);
+
+                File transactionsFile = new File("transactions.txt");
+                Scanner tScanner = new Scanner(transactionsFile);
+
+                while (tScanner.hasNext())
+                {
+                    Transaction transaction;
+
+                    char type = tScanner.next().charAt(0);
+
+                    if (type == 'P')
+                    {
+                        transaction = Payment.read(tScanner);
+                    }
+                    else
+                    {
+                        transaction = Order.read(tScanner);
+                    }
+
+                    if (transaction.getCustomerID() == customer.getCustomerID())
+                    {
+                        customer.addTransaction(transaction);
+                    }
+                }
+
+                tScanner.close();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        cScanner.close();
+
+        for (Customer customer : customers)
+        {
+            pw.write(customer.toString());
+        }
+
+        pw.close();
+    }
+}

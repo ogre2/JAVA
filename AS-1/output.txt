@@ -1,0 +1,70 @@
+HudsonPainting		1110
+			Previous Balance		$1750.25
+
+#7859		Payment		1000.00
+#5838		Payment		750.25
+#5119		Paint		375.00
+#9635		Primer		325.00
+
+			Balance Due			$700.00
+
+SUEZElectric		1111
+			Previous Balance		$1170.34
+
+#3129		Cable		1040.00
+#7751		Payment		600.00
+#2910		Payment		500.00
+#5238		Ladder		357.00
+
+			Balance Due			$1467.34
+
+SamsPlumbing		1112
+			Previous Balance		$1200.0
+
+#7823		Wrench		249.85
+#3898		Payment		1200.00
+#4492		Gloves		19.80
+#4599		Clamp		73.94
+
+			Balance Due			$343.59
+
+JPRepairs		1113
+			Previous Balance		$1343.12
+
+#1633		Payment		1200.00
+#3188		Screwdriver		35.80
+#2985		Screws		102.72
+#9436		Pliers		25.94
+
+			Balance Due			$307.58
+
+McKadeRoofing		1114
+			Previous Balance		$1665.85
+
+#6721		Ladder		375.00
+#3524		Payment		375.00
+#7512		Payment		500.85
+#8759		Payment		1100.00
+
+			Balance Due			$65.00
+
+SeasideHVAC		1115
+			Previous Balance		$1095.99
+
+#7057		Fuses		90.00
+#9089		Payment		500.95
+#6120		Payment		500.00
+#4985		Washers		199.00
+
+			Balance Due			$384.04
+
+Mark&CoDevelopers		1116
+			Previous Balance		$2550.88
+
+#2407		Clamps		209.88
+#7668		ConcreteMix		324.25
+#7664		Drywall		230.60
+#9443		Payment		2000.00
+
+			Balance Due			$1315.61
+
