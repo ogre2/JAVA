@@ -1,89 +1,74 @@
 import java.io.File;
-// import java.io.FileNotFoundException;
 import java.io.FileWriter;
-import java.io.PrintWriter;
-// import java.io.IOException;
 import java.util.Scanner;
-// import java.util.ArrayList;
 
 public class Main
 {
-
     public static void main(String[] args) throws Exception
     {
-        // ArrayList<Customer> customers = new ArrayList<>();
+        FileWriter output = new FileWriter("output.txt");
 
-        File customersFile = new File("customers.txt");
-        Scanner cScanner = new Scanner(customersFile);
+        Scanner transactions = new Scanner(new File("transactions.txt"));
+        Scanner customers = new Scanner(new File("customers.txt"));
 
-        FileWriter fw = new FileWriter("output.txt");
-        PrintWriter pw = new PrintWriter(fw);
-        
-        while (cScanner.hasNext())
+        Transaction transaction = readTransaction(transactions);
+
+        while(customers.hasNext())
         {
-            Customer customer;
-            try
+            Customer customer = Customer.read(customers);
+
+            while(transactions.hasNext())
             {
-                int customerID = cScanner.nextInt();
-                String customerName = cScanner.next();
-                double customerBalance = cScanner.nextDouble();
-
-                customer = new Customer(customerID, customerName, customerBalance);
-
-                // customers.add(customer);
-
-                File transactionsFile = new File("transactions.txt");
-                Scanner tScanner = new Scanner(transactionsFile);
-
-                while (tScanner.hasNext())
+                if (customer.getCustomerID() > transaction.getCustomerID())
                 {
-                    Transaction transaction;
+                    System.out.println("Transaction #" + transaction.getTransactionNum() + " is not matched to customer " + customer.getCustomerID());
+                    
+                    transaction = readTransaction(transactions);
 
-                    try
-                    {
-                        char type = tScanner.next().charAt(0);
-
-                        if (type == 'P')
-                        {
-                            transaction = Payment.read(tScanner);
-                        }
-                        else
-                        {
-                            transaction = Order.read(tScanner);
-                        }
-
-                        if (customer.getCustomerID() == transaction.getCustomerID())
-                        {
-                            customer.addTransaction(transaction);
-                        }
-                        else
-                        {
-                            throw new UnknownCustomerException(transaction.getTransactionNum());
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        System.out.println(ex.getMessage());
-                    }
+                    break;
                 }
+                else if (customer.getCustomerID() == transaction.getCustomerID())
+                {
+                    customer.addTransaction(transaction);
 
-                pw.write(customer.toString());
+                    transaction = readTransaction(transactions);
+                }
+                else
+                {
+                    break;
+                }
+            }
 
-                tScanner.close();
-            }
-            catch (Exception ex)
-            {
-                System.out.println(ex.getMessage());
-            }
+            output.write(customer.toString());
         }
 
-        cScanner.close();
+        output.close();
+    }
 
-        // for (Customer customer : customers)
-        // {
-        //     pw.write(customer.toString());
-        // }
+    public static Transaction readTransaction(Scanner sc)
+    {
+        Transaction transaction;
 
-        pw.close();
+        char type = sc.next().charAt(0);
+
+        if (type == 'P')
+        {
+            transaction = Payment.read(sc);
+        }
+        else
+        {
+            transaction = Order.read(sc);
+        }
+
+        sc.nextLine();
+
+        return transaction;
+    }
+
+    public static Customer readCustomer(Scanner sc)
+    {
+        Customer customer = Customer.read(sc);
+
+        return customer;
     }
 }

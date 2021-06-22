@@ -62,9 +62,8 @@ Mark&CoDevelopers		1116
 			Previous Balance		$2550.88
 
 #2407		Clamps		209.88
-#7668		ConcreteMix		324.25
+#7668		Bucket		174.25
 #7664		Drywall		230.60
 #9443		Payment		2000.00
 
-			Balance Due			$1315.61
-
+			Balance Due			$1165.61

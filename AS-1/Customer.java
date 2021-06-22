@@ -100,7 +100,7 @@ public class Customer
         return data;
     }
 
-    public Customer read(Scanner sc)
+    public static Customer read(Scanner sc)
     {
         if (!sc.hasNext())
         {
